@@ -47,7 +47,7 @@ public class RoomService {
 
     // get messages
 
-    public ResponseEntity<List<Message>> getMessages(String roomId){
+    public ResponseEntity<List<Message>> getTexts(String roomId){
         Room room = this.roomRepository.findByRoomId(roomId);
 
         if(room==null){

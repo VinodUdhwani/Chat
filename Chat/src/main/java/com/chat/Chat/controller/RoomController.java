@@ -29,8 +29,8 @@ public class RoomController {
     }
 
     @GetMapping("/messages/{roomId}")
-    public ResponseEntity<List<Message>> getMessages(@PathVariable String roomId){
-        return this.getMessages(roomId);
+    public ResponseEntity<List<Message>> get(@PathVariable String roomId){
+        return this.roomService.getTexts(roomId);
     }
 
     @DeleteMapping("/{roomId}")

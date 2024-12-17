@@ -14,7 +14,9 @@ public class Room {
     private String id;
     private String roomId;
 
-    @ElementCollection(fetch = FetchType.EAGER,targetClass = Message.class)
+    @ElementCollection
+    @CollectionTable(name = "room_messages", joinColumns = @JoinColumn(name = "room_id"))
+    @Column(name = "message")
     private List<Message> messages=new ArrayList<>();
 
     public Room(String id, List<Message> messages, String roomId) {
